@@ -1,19 +1,20 @@
 var xhr1 = new XMLHttpRequest();
-xhr1.withCredentials = true;
+// xhr1.withCredentials = true;
 
-xhr1.open("GET", "https://api.covid19api.com/live/country/india",true);
+xhr1.open("GET", "https://www.trackcorona.live/api/countries",true);
 
 xhr1.onload = function () {
     if (this.status === 200) {
         let covidData1 = JSON.parse(this.responseText);
-            // console.log(covidData1);
+        let regions1 = covidData1.data;
+            // console.log(regions1);
 
-            covidData1.forEach(function(element){
-                cases = element.Active;
-                if (cases<2000){
+            regions1.forEach(function(element){
+                cases = element.confirmed;
+                if (cases<50000){
                     color = "rgb(255, 0, 0)";
                 }
-                else if(cases>200 && cases<10000)
+                else if(cases>50000 && cases<150000)
                 {
                     color = "rgb(121, 0, 0)";
                 }
@@ -25,7 +26,7 @@ xhr1.onload = function () {
                 new mapboxgl.Marker({
                     draggable: false,
                     color: color
-                }).setLngLat([element.Lon, element.Lat])
+                }).setLngLat([element.longitude, element.latitude])
                 .addTo(map);
             });
       }

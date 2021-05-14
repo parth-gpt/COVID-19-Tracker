@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>COVID-19 Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Megrim&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-light bg-light">
+        <div class="container top">
+          
+        </div>
+      </nav>
+      <div class="row container-fluid">
+      <div class="card my-4 mx-4" style="width: 18rem;">
+        <img src="/l.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">This is a <br><b> COVID - 19 TRACKER </b>where you can get all the required information about the spread of Corona Virus in the country in various statistical format.</p>
+          <a href="/main.html" class="btn btn-primary">Home</a>
+        </div>
+      </div>
+      <div class="card my-4 mx-4" style="width: 18rem;">
+        <img src="/Screenshot 2021-05-13 at 10.15.25 PM.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">The fight against <b> Corona Virus</b> has begun all over the world with the beginning of Vaccination.
+              To Register for Vaccination in <b> India </b> follow the link below!
+          </p>
+          <a href="https://www.cowin.gov.in/home" class="btn btn-primary" target="_blank">Vaccine Registration</a>
+        </div>
+      </div>
+      <div class="card my-4 mx-4" style="width: 18rem;">
+        <img src="/Screenshot 2021-05-13 at 10.38.23 PM.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">There are some preventions mentioned by <b> WHO </b>that are needed to be taken and is really necessary to fight this Virus.Please follow the link for the same!
+          </p>
+          <a href="https://www.who.int/health-topics/coronavirus#tab=tab_2" class="btn btn-primary" target="_blank">Preventions</a>
+        </div>
+      </div>
+      <div class="card my-4 mx-4" style="width: 18rem;">
+        <img src="/Screenshot 2021-05-13 at 10.52.18 PM.png" class="card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text">Keeping <b> Patience </b>is an important part of this journey to fight this pandemic.Please follow the link to have look on some of the symptoms guided by <b> WHO</b>!
+          </p>
+          <a href="https://www.who.int/health-topics/coronavirus#tab=tab_3" class="btn btn-primary" target="_blank">Symptoms</a>
+        </div>
+      </div>
+    </div>
+    <div id="notes" class="row container-fluid top-data">
+      
+    </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+    <div class="chart">
+        <h3 class="chart-head">DATA ANALYSIS</h3>
+        <br>
+        <canvas id="myChart"></canvas>
+      </div>
+    <br>
+    <br>
+    <br>
+
+    <h3 class="table-head">STATE-WISE TABULAR DATA</h3>
+    <br>
+      <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">State</th>
+              <th scope="col">Deceased</th>
+              <th scope="col">Recovered</th>
+            </tr>
+          </thead>
+          <tbody id="tableData">
+            
+          </tbody>
+      </table>
+
+
+<div id='map' style='width: 400px; height: 500px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicGFydGhncHQxMCIsImEiOiJja25iZGZ6dmQwd3g0MnBtdW00aGJlaDdpIn0.0yudLBfOdAl_wACwzfgl2A';
+var map = new mapboxgl.Map({
+    container: 'map', // container ID
+    style: 'mapbox://styles/mapbox/streets-v11', // style URL
+   
+    zoom: 4 // starting zoom
+});
+</script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/index.js"></script>
+  </body>
+<br>
+<br>
+<br>
+<br>
+<nav class="navbar1 navbar-light bg-light bottom">
+  <div class="container">
+    
+            <img src="/Screenshot 2021-05-14 at 1.06.30 AM.png" alt="" width="200">
+        </div>
+      </nav>
+      <footer>
+        <span>&#169;</span> 2021-22
+    </footer>
+</html>
